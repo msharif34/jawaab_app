@@ -1,0 +1,19 @@
+span {
+    font-size: 20px;
+}
+a {
+  color: #00B7FF;
+}
+
+p {
+	font-family: 'Droid Arabic Naskh'!important;
+	line-height: 2.2em;
+	margin:0 0 10px;
+	display: block;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+        color: #070B79;
+    font-weight: 700;
+}
