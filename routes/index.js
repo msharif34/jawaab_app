@@ -9,14 +9,15 @@ var db = require('../models');
 router.get('/', function(req, res, next) {
 	db.fatwa.find({where: {questionSomali: null, answerSomali:null}}).then(function(data){
 	  db.category.find({where: {id: data.categoryId}}).then(function(category){
-	  res.render('index', { data: data,
-	  						category: category});
-	  })
+	  res.render('index',{
+	  	  data: data,
+	  	  category: category});
+	  });
 	})
 });
 
+
 router.post('/', function(req, res, next) {
-	console.log(req.body)
 	db.category.find({where: {id:req.body.categoryID}})
 		.then(function(category){
 			console.log(category)
@@ -27,11 +28,11 @@ router.post('/', function(req, res, next) {
 					fatwa.questionSomali = req.body.question;
 					fatwa.answerSomali = req.body.answer;
 					fatwa.save().then(function(){
-						res.redirect('/');
-					})
-				})
-			})
+					res.redirect('/');
+				});
+			});
 		});
+	});
 });
 
 module.exports = router;
