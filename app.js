@@ -7,7 +7,8 @@ var bodyParser = require('body-parser');
 var ejsLayouts = require("express-ejs-layouts");
 var routes = require('./routes/index');
 var users = require('./routes/users');
-
+var search = require('./routes/search');
+var db = require('./models');
 var app = express();
 
 // view engine setup
@@ -23,8 +24,22 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(function (req, res, next) {
+   res.locals = {
+     siteTitle: 'My Websites Title',
+     pageTitle: 'The Home Page',
+     author: 'Cory Gross',
+     description: 'My apps description',
+   };
+   db.category.findAll().then(function(category){
+      res.locals.allCategories = category
+      next();
+   })
+});
+
 app.use('/', routes);
 app.use('/users', users);
+app.use('/search', search);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

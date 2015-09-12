@@ -1,0 +1,134 @@
+<!--mid column-->
+            <div class="col-md-3">
+              <div class="panel" id="midCol">
+                <div class="panel-heading" style="background-color:#555;color:#eee;">All Categories</div> 
+                <div class="panel-body">                  
+							<% var name = '' %>
+							<% var id = 0 %>
+					<% for(var i = 0; i < data.length; i++){ %>
+								 	<% id = data[i].id %>
+							 <% if(data[i].name != name){ %>
+								 	<% name = data[i].name %>
+					<h5><a href="/category/<%= name.replace(/\s+/g, '-') %>/<%= id %>"><i class="glyphicon glyphicon-book"></i> <%= name %></a></h5>
+							 	<% } %>
+							<% } %>				
+				<img class="img-responsive" src="//placehold.it/300x200/FFF">    
+                  
+                  <div class="media">
+                    <a class="pull-left" href="#">
+                      <img class="media-object" src="http://placehold.it/80/F0F0F0">
+                    </a>
+                    <div class="media-body">
+                      <h5 class="media-heading"><a href="/tagged/modal" target="ext" class="pull-right"><i class="glyphicon glyphicon-share"></i></a> <a href="#"><strong>Modal</strong></a></h5>
+                      <small>Examples using the Bootstrap modal.</small><br>
+                      <span class="badge">87</span>
+                    </div>
+                  </div>
+                  <div class="media">
+                    <a class="pull-left" href="#">
+                      <img class="media-object" src="http://placehold.it/80/F0F0F0">
+                    </a>
+                    <div class="media-body">
+                      <h5 class="media-heading"><a href="/tagged/slider" target="ext" class="pull-right"><i class="glyphicon glyphicon-share"></i></a> <a href="#"><strong>Carousel</strong></a></h5>
+                      <small>How to use the Bootstrap slider.</small><br>
+                      <span class="badge">322</span>
+                    </div>
+                  </div>
+                  <div class="media">
+                    <a class="pull-left" href="#">
+                      <img class="media-object" src="http://placehold.it/80/F0F0F0">
+                    </a>
+                    <div class="media-body">
+                      <h5 class="media-heading"><a href="/tagged/typography" target="ext" class="pull-right"><i class="glyphicon glyphicon-share"></i></a> <a href="#"><strong>Typography</strong></a></h5>
+                      <small>See the various textual elements and options.</small><br>
+                      <span class="badge">44</span>
+                    </div>
+                  </div>
+                  <div class="media">
+                    <a class="pull-left" href="#">
+                      <img class="media-object" src="http://placehold.it/80/F0F0F0">
+                    </a>
+                    <div class="media-body">
+                      <h5 class="media-heading"><a href="/tagged/media" target="ext" class="pull-right"><i class="glyphicon glyphicon-share"></i></a> <a href="#"><strong>@Media</strong></a></h5>
+                      <small>Use @media queries to get the layout you want.</small><br>
+                      <span class="badge">119</span>
+                    </div>
+                 </div>
+                  
+               </div> 
+               </div><!--/panel-->
+            </div><!--/end mid column-->
+            
+            <!-- right content column-->
+            <div class="col-md-7" id="content">
+                <div class="panel">
+                <div class="panel-heading" style="background-color:#111;color:#fff;">Most Popular</div>   
+                <div class="panel-body">
+                  
+                  <div class="row">
+                  <div class="col-md-8">
+                    <h5><%= fatwa[0].question %></h5>
+                    2013 was marked as the year of Responsive Web Design (RWD). The Web is filled with big brands, galleries and magical examples that media queries demonstrate the glory of responsive design.
+                    <hr>
+                                        <a href="#"><img src="//placehold.it/300x120/77CCDD/66BBCC" class="img-responsive"></a>
+                    <div class="text-muted"><small>Aug 15 / Wilson Traiker</small></div>
+                    <p>
+                    <%= fatwa[1].question %>
+                    </p>
+                  </div> 
+                  <div class="col col-sm-4">
+                    <a href="#"><img src="//placehold.it/300x120/77CCDD/66BBCC" class="img-responsive"></a>
+                    <div class="text-muted"><small>Aug 15 / John Pierce</small></div>
+                    <p>
+                    <%= fatwa[2].question %>
+                    </p>
+                    <hr>
+                    <a href="#"><img src="//placehold.it/300x120/77CCDD/66BBCC" class="img-responsive"></a>
+                    <div class="text-muted"><small>Aug 15 / Wilson Traiker</small></div>
+                    <p>
+                   <%= fatwa[3].question %>
+                    </p>
+                  </div>   
+                </div>
+                
+                  <hr>
+                  
+                  "Mobile first" and "unobtrusive JavaScript" (AKA: "progressive enhancement") are strategies for when a new site design is being considered. These are related concepts that predated RWD: browsers of basic mobile phones do not understand JavaScript or media queries, so the recommended practice is to create a basic web site then enhance it for smart phones and PCs—rather than try "graceful degradation" to make a complex, image-heavy site work on the most basic mobile phones.
+                  <br><br>
+                  Media Queries is a CSS3 module allowing content rendering to adapt to conditions such as screen resolution (e.g. smartphone vs. high definition screen). It became a W3C recommended standard in June 2012.[1] and is a cornerstone technology of Responsive Web Design.
+
+                  <hr>
+                  
+                  <div class="row">
+                    <div class="col-md-3 col-sm-6 col-6">
+                      <a href="#"><img src="//placehold.it/600X200/EDEDED" class="img-responsive"></a>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-6">
+                      <a href="#"><img src="//placehold.it/600X200/DDDDDD" class="img-responsive"></a>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-6">
+                      <a href="#"><img src="//placehold.it/600X200/555555/EEE" class="img-responsive"></a>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-6">
+                      <a href="#"><img src="//placehold.it/600X200/F3F3F3" class="img-responsive"></a>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="row">
+                    <div class="col-md-3 col-sm-6 col-6">
+                      <a href="#"><img src="//placehold.it/600X200/999999/DDD" class="img-responsive"></a>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-6">
+                      <a href="#"><img src="//placehold.it/600X200/CCCCCC" class="img-responsive"></a>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-6">
+                      <a href="#"><img src="//placehold.it/600X200/EDEDED" class="img-responsive"></a>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-6">
+                      <a href="#"><img src="//placehold.it/600X200/E0E0E0" class="img-responsive"></a>
+                    </div>
+                  </div>
+
+                  </div><!--/panel-body-->
+                </div><!--/panel-->
+                <!--/end right column-->

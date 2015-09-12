@@ -1,0 +1,30 @@
+<h1>Search Results</h1>
+<% if(data){ %>
+<% var count = 0 %>
+<% data.forEach(function(data){ %>
+	<% count ++ %>
+	<ul class="result-list">
+		<li>
+		<a href="/question/<%= data.question.replace(/\s+/g, '-').replace(/\?/g, '') %>/<%= data.id %>"><%= count %>.<%= data.question %></a>
+		</li>
+	</ul>
+<% }) %>
+<% }else{ %>
+	<%= console.log('no data') %>
+<% } %>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+	console.log(<%- JSON.stringify(term) %>);
+
+	<% term.forEach(function(term){ %>
+		$('.result-list').highlight('<%= term %>');
+	<% }) %>
+</script>

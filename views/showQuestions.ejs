@@ -1,0 +1,9 @@
+<div class="panel-heading" style="background-color:#555;color:#eee;">Category: <%= category.name %></div> 
+<div class="well">
+	<ul>
+	<% data.forEach(function(question){ %>
+	<% var name = question.question %>
+	<li><a href="/question/<%= name.replace(/\s+/g, '-').replace(/\?/g, '') %>/<%= question.id %>"><%= question.question %></a></li>
+	<% }) %>
+</ul>
+</div>

@@ -1,7 +1,7 @@
 'use strict';
 module.exports = function(sequelize, DataTypes) {
   var category = sequelize.define('category', {
-    name: DataTypes.STRING,
+    name: {type: DataTypes.STRING, unique: true},
     nameSomali: DataTypes.STRING
   }, {
     classMethods: {
