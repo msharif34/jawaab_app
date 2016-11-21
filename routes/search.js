@@ -3,7 +3,6 @@ var router = express.Router();
 var request = require('request');
 var cheerio = require('cheerio');
 var async = require('async');
-var _ = require('underscore');
 
 
 
@@ -55,7 +54,7 @@ router.get('/news', function(req, res){
             count+=1;
 
               for(var i in meta){
-                if(meta[i].name === 'time'){  
+                if(meta[i].name === 'time'){
                   time = meta[i].children[0].data
                 };
             };
@@ -70,7 +69,7 @@ router.get('/news', function(req, res){
             console.log(newsArray)
           };
             newsArray.push(article);
-      
+
 
             callback()
           // Call an asynchronous function, often a save() to DB
