@@ -23,13 +23,14 @@ router.get('/results', function(req, res){
 	res.render('results', {data: data,
 							term: term })
 	})
-})
+});
 
 
 
 router.get('/news', function(req, res){
-          request('http://horseedmedia.net/', function(error, response, data){
-			// console.log(data);
+	res.header('Access-Control-Allow-Origin', '*'); 
+	console.log(req)
+      request('http://horseedmedia.net/', function(error, response, data){
       var count = 0;
       var newsArray = [];
       var article = {};
@@ -45,7 +46,7 @@ router.get('/news', function(req, res){
         // 2nd param is the function that each item is passed to
         function(item, callback){
 
-          if(item.children[2] !== undefined || null){
+          if(item.children[2] !== undefined || null && count < 19){
             link = item.children[0].attribs.href;
             meta = item.children[1].children[1].children;
             content_preview = item.children[2].children[0].children[0].data;
@@ -66,9 +67,9 @@ router.get('/news', function(req, res){
               "content_preview": content_preview,
               "link": link
             };
-            console.log(newsArray)
-          };
+            // console.log(newsArray)
             newsArray.push(article);
+          };
 
 
             callback()
@@ -76,7 +77,7 @@ router.get('/news', function(req, res){
           },
         function(err){
        // All tasks are done now
-       res.send(newsArray)
+       res.send(newsArray[0])
   			if(err){
           console.log('there has been an error: ' + err)
         };
